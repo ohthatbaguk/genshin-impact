@@ -36,6 +36,14 @@
       "last 1 safari version"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ohthatbaguk/genshin-impact.git"
+  },
   "author": "Natallia Bahuk",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ohthatbaguk/genshin-impact/issues"
+  },
+  "homepage": "https://github.com/ohthatbaguk/genshin-impact#readme"
 }
