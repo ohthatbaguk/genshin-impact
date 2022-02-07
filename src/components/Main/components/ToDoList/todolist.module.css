@@ -1,0 +1,22 @@
+.todoList {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--back-color-todoList);
+    border-radius: 15px;
+    margin: 10px;
+}
+
+
+.toggleView > li {
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+.toggleView li:not(:first-child):before {
+    content: ", ";
+}
+
+

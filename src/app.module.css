@@ -1,0 +1,44 @@
+.mainDiv {
+    display: grid;
+    min-height: 100vh;
+    grid-gap: 3px;
+    grid-template-areas:
+            ". . head head head head head head . ."
+            ". . main main main main main main . ."
+            ". . main main main main main main . ."
+            ". section section section section section section section section ."
+            ". foot foot foot foot foot foot foot foot .";
+    grid-template-rows: 70px repeat(3, 1fr) 50px;
+    grid-template-columns: repeat(2, 70px) repeat(6, 1fr) repeat(2, 70px);
+}
+
+.mainDiv.light {
+    background-color: var(--back-color-body-light);
+
+}
+
+.mainDiv.dark {
+    background-color: var(--back-color-body-dark);
+
+}
+
+.mainDiv > header {
+    grid-area: head;
+    background-color: var(--back-color-header);
+}
+
+.mainDiv > main {
+    grid-area: main;
+}
+
+.mainDiv > footer {
+    grid-area: foot;
+    background-color: #CDCAC0;
+}
+
+.mainDiv > section {
+    grid-area: section;
+    background-color: gold;
+}
+
+

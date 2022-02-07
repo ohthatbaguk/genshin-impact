@@ -1,13 +1,16 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Short+Stack&display=swap');
+
+:root {
+    --back-color-header: #CBE3BF;
+    --back-color-footer: #6B8691;
+    --back-color-body-light: #EAECEB;
+    --back-color-body-dark: #934E74;
+    --back-color-clock: #ABAB87;
+    --back-color-catFact: #FF884E;
+    --back-color-todoList: #A0A9D7;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body {
+    margin: 0;
+    font-family: 'Indie Flower', cursive;
 }
