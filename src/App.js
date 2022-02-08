@@ -3,6 +3,7 @@ import styles from "./app.module.css";
 import { useState } from "react";
 import Main from "./components/Main/Main";
 import classNames from "classnames";
+import Section from "./components/Section/Section/Section";
 
 function App() {
   const [isDarkTheme, setDarkTheme] = useState(false);
@@ -20,7 +21,7 @@ function App() {
       <button onClick={handleClick}>Change theme</button>
       <Header />
       <Main />
-      <section>Section</section>
+      <Section />
       <footer>Footer</footer>
     </div>
   );
