@@ -1,0 +1,25 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 15px;
+}
+
+.link {
+    font-weight: bold;
+    margin: 10px;
+    text-decoration: inherit;
+    color: black;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.production {
+    margin: 10px;
+}
+
+.address {
+    margin: 10px;
+}

@@ -7,6 +7,7 @@ export default function CatFact() {
   const handleClick = () => {
     getCatFact().then(setFact);
   };
+
   return (
     <article className={styles.catFact}>
       <h3 className={styles.title}>Cat fact</h3>

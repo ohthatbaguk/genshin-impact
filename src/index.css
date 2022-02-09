@@ -2,12 +2,13 @@
 
 :root {
     --back-color-header: #CBE3BF;
-    --back-color-footer: #6B8691;
-    --back-color-body-light: #EAECEB;
+    --back-color-footer: #CBE3BF;
+    --back-color-body-light: #FBEC9B;
     --back-color-body-dark: #934E74;
     --back-color-clock: #ABAB87;
     --back-color-catFact: #FF884E;
     --back-color-todoList: #A0A9D7;
+    --back-color-section: #8DF0B0;
 }
 
 html, body {

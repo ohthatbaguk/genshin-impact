@@ -4,6 +4,7 @@ import { useState } from "react";
 import Main from "./components/Main/Main";
 import classNames from "classnames";
 import Section from "./components/Section/Section/Section";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [isDarkTheme, setDarkTheme] = useState(false);
@@ -22,7 +23,7 @@ function App() {
       <Header />
       <Main />
       <Section />
-      <footer>Footer</footer>
+      <Footer />
     </div>
   );
 }
