@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    font-weight: bold;
+    margin: 15px;
+    text-decoration: inherit;
+    color: black;
+}
+
+
