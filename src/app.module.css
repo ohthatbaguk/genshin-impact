@@ -1,6 +1,6 @@
 .mainDiv {
     display: grid;
-    height: 100%;
+    min-height: 100vh;
     grid-gap: 3px;
     grid-template-areas:
             ". . head head head head head head . ."

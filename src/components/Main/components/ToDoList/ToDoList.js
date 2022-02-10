@@ -1,9 +1,9 @@
 import styles from "./todolist.module.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 
 export default function ToDoList() {
-  const [items, setItems] = useState([]);
+  let [items, setItems] = useState(getFromLocalStorage());
   const [isInlineView, setInlineView] = useState(false);
   const elementRefInput = useRef();
 
@@ -19,6 +19,10 @@ export default function ToDoList() {
     element.value = "";
   };
 
+  useEffect(() => {
+    addToLocalStorage(items);
+  }, [items]);
+
   const handleClick = (itemToRemove) => {
     setItems((todos) => todos.filter((item) => item !== itemToRemove));
   };
@@ -32,9 +36,17 @@ export default function ToDoList() {
       <button onClick={handleButtonClick}>Toggle view</button>
       <h3>List TODO</h3>
       <form onSubmit={handleSubmit}>
-        <input ref={elementRefInput} name="todosItem" type="text" />
-        <input type="submit" value="DO IT!" />
-        <ul className={classNames({ [styles.toggleView]: isInlineView })}>
+        <input
+          placeholder="Add a TODO.."
+          ref={elementRefInput}
+          name="todosItem"
+          type="text"
+        />
+        <input type="submit" value="Add" />
+        <ul
+          id="todosList"
+          className={classNames({ [styles.toggleView]: isInlineView })}
+        >
           {items.map((item) => (
             <li onClick={() => handleClick(item)} key={item}>
               {item}
@@ -45,3 +57,24 @@ export default function ToDoList() {
     </article>
   );
 }
+
+const addToLocalStorage = (todos) => {
+  try {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  } catch (error) {
+    console.log("Something went wrong..");
+    return null;
+  }
+};
+
+const getFromLocalStorage = () => {
+  const reference = localStorage.getItem("todos");
+  if (reference) {
+    try {
+      return JSON.parse(reference);
+    } catch (error) {
+      return [];
+    }
+  }
+  return [];
+};
