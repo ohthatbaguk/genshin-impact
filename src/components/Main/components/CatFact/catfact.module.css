@@ -1,4 +1,5 @@
 .catFact {
+    height: 200px;
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -16,6 +17,10 @@
 }
 
 .factDescription {
+    border-radius: 5px;
+    border: 1px solid black;
+    overflow: scroll;
     margin: 5px;
+    padding: 10px;
     font-size: 20px;
 }

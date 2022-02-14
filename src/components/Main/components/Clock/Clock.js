@@ -1,14 +1,8 @@
-import { useEffect, useState } from "react";
 import styles from "./clock.module.css";
+import useDateTime from "./hooks/useDateTime";
 
-export default function Clock({ className }) {
-  let [time, setTime] = useState(new Date().toLocaleTimeString());
-
-  const date = new Date().toDateString();
-
-  useEffect(() => {
-    setInterval(() => setTime(new Date().toLocaleTimeString()), 1000);
-  }, []);
+export default function Clock() {
+  const { date, time } = useDateTime();
 
   return (
     <article className={styles.clock}>
