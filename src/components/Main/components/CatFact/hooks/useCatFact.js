@@ -1,16 +1,17 @@
 import { useState } from "react";
+import useOpenClose from "src/hooks/useOpenClose/useOpenClose";
 
 export default function useCatFact() {
-  const [loading, setLoading] = useState(false);
+  const { loading, startLoading, endLoading } = useOpenClose();
   const [error, setError] = useState(null);
-  const [fact, setFact] = useState("Click on the button!");
+  const [fact, setFact] = useState(null);
 
   const getData = () => {
-    setLoading(true);
+    startLoading();
     getCatFact()
       .then(setFact)
       .catch(setError)
-      .finally(() => setLoading(false));
+      .finally(() => endLoading());
   };
 
   return { loading, error, fact, getData };

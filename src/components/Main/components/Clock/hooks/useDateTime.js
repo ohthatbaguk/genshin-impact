@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 
 export default function useDateTime() {
-  let [time, setTime] = useState(new Date().toLocaleTimeString());
+  const [date, setDate] = useState(new Date());
 
-  const date = new Date().toDateString();
+  const timeStr = date.toLocaleTimeString();
+  const dateStr = new Date().toDateString();
 
   useEffect(() => {
-    setInterval(() => setTime(new Date().toLocaleTimeString()), 1000);
+    setInterval(() => setDate(new Date()), 1000);
   }, []);
 
-  return { time, date };
+  return { time: timeStr, date: dateStr };
 }

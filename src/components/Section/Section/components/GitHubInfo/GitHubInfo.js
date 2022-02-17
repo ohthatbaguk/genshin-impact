@@ -1,18 +1,19 @@
+import Widget from "src/components/WidgetContainer/Widget";
 import styles from "./githubinfo.module.css";
-import useGitHubInfo from "./hooks/useGitHubInfo";
+import useGitHubZen from "src/components/Section/Section/components/GitHubInfo/hooks/useGitHubZen";
+import useGitHubInfo from "src/components/Section/Section/components/GitHubInfo/hooks/useGitHubInfo";
 
 export default function GitHubInfo() {
-  const { zen, info } = useGitHubInfo();
+  const zen = useGitHubZen();
+  const info = useGitHubInfo();
 
   if (!info) {
     return <article>Loading..</article>;
   }
 
   return (
-    <article className={styles.githubInfoContainer}>
-      <h3 className={styles.title}>GitHub Zen</h3>
+    <Widget anotherClassname={styles.githubInfoContainer} title="GitHub Info">
       <p className={styles.description}>{zen}</p>
-      <h3 className={styles.title}>GitHub Info</h3>
       <p className={styles.description}>
         have {info.public_repos} public repositories
       </p>
@@ -25,6 +26,6 @@ export default function GitHubInfo() {
         src="https://avatars.githubusercontent.com/u/72410940?v=4"
         alt="avatar"
       />
-    </article>
+    </Widget>
   );
 }

@@ -1,18 +1,19 @@
 import styles from "./catfact.module.css";
 import useCatFact from "./hooks/useCatFact";
+import Widget from "src/components/WidgetContainer/Widget";
 
 export default function CatFact() {
   const { loading, error, fact, getData } = useCatFact();
 
-  if (error) {
-    return <p>Something went wrong.. </p>;
-  }
-
   return (
-    <article className={styles.catFact}>
-      <h3 className={styles.title}>Cat fact</h3>
-      <p className={styles.factDescription}>{loading ? "Loading.." : fact}</p>
+    <Widget
+      anotherClassname={styles.catFact}
+      loading={loading}
+      error={error}
+      title="Cat Fact"
+    >
+      <p className={styles.factDescription}>{fact ?? "Click on the button!"}</p>
       <button onClick={getData}>Meow!</button>
-    </article>
+    </Widget>
   );
 }
