@@ -8,10 +8,7 @@ export default function useCatFact() {
 
   const getData = () => {
     startLoading();
-    getCatFact()
-      .then(setFact)
-      .catch(setError)
-      .finally(() => endLoading());
+    getCatFact().then(setFact).catch(setError).finally(endLoading());
   };
 
   return { loading, error, fact, getData };

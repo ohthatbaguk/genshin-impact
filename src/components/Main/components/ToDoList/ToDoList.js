@@ -3,9 +3,11 @@ import classNames from "classnames";
 import useToDoList from "./hooks/useToDoList";
 import Widget from "src/components/WidgetContainer/Widget";
 import useToggle from "src/hooks/useToggle/useToggle";
+import { useRef } from "react";
 
 export default function ToDoList() {
-  const { onSubmit, elementRefInput, itemToRemove, items } = useToDoList();
+  const elementInputRef = useRef();
+  const { onSubmit, removeItem, items } = useToDoList(elementInputRef);
   const [inlineView, changeView] = useToggle();
 
   return (
@@ -13,7 +15,7 @@ export default function ToDoList() {
       <form onSubmit={onSubmit}>
         <input
           placeholder="Add a TODO.."
-          ref={elementRefInput}
+          ref={elementInputRef}
           name="todosItem"
           type="text"
         />
@@ -24,7 +26,7 @@ export default function ToDoList() {
         className={classNames(styles.ul, { [styles.toggleView]: inlineView })}
       >
         {items.map((item) => (
-          <li onClick={() => itemToRemove(item)} key={item}>
+          <li onClick={() => removeItem(item)} key={item}>
             {item}
           </li>
         ))}

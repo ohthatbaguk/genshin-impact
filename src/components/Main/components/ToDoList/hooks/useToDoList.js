@@ -1,9 +1,7 @@
-import { useRef } from "react";
 import useTodosItems from "src/components/Main/components/ToDoList/hooks/useTodosItems";
 
-export default function useToDoList() {
-  const { items, setItems, itemToRemove } = useTodosItems();
-  const elementRefInput = useRef();
+export default function useToDoList(inputRef) {
+  const { items, addItem, removeItem } = useTodosItems();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -11,16 +9,15 @@ export default function useToDoList() {
     const formData = new FormData(e.target);
     const item = formData.get("todosItem");
     if (items.includes(item)) return;
-    setItems((todos) => [item, ...todos]);
+    addItem(item);
 
-    const element = elementRefInput.current;
+    const element = inputRef.current;
     element.value = "";
   };
 
   return {
-    elementRefInput,
     items,
-    itemToRemove,
+    removeItem,
     onSubmit,
   };
 }

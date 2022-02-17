@@ -6,13 +6,13 @@ function saveToLocalStorage(key, value) {
   }
 }
 
-function getFromLocalStorage(key) {
+function getFromLocalStorage(key, defaultValue = null) {
   const reference = localStorage.getItem(key);
-  if (!reference) return [];
+  if (!reference) return defaultValue;
   try {
     return JSON.parse(reference);
   } catch (error) {
-    return [];
+    return defaultValue;
   }
 }
 
