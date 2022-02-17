@@ -1,24 +1,19 @@
-import { useState } from "react";
 import styles from "./catfact.module.css";
+import useCatFact from "./hooks/useCatFact";
+import Widget from "src/components/WidgetContainer/Widget";
 
 export default function CatFact() {
-  const [fact, setFact] = useState(null);
-
-  const handleClick = () => {
-    getCatFact().then(setFact);
-  };
+  const { loading, error, fact, getData } = useCatFact();
 
   return (
-    <article className={styles.catFact}>
-      <h3 className={styles.title}>Cat fact</h3>
-      <p className={styles.factDescription}>{fact}</p>
-      <button onClick={handleClick}>Meow!</button>
-    </article>
+    <Widget
+      anotherClassname={styles.catFact}
+      loading={loading}
+      error={error}
+      title="Cat Fact"
+    >
+      <p className={styles.factDescription}>{fact ?? "Click on the button!"}</p>
+      <button onClick={getData}>Meow!</button>
+    </Widget>
   );
 }
-
-const getCatFact = async () => {
-  const response = await fetch("https://cat-fact.herokuapp.com/facts/random");
-  const result = await response.json();
-  return result.text;
-};

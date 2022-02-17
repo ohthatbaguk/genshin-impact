@@ -1,0 +1,16 @@
+.allWidget {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--back-color-widget);
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.widgetTitle {
+    padding: 5px;
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+}

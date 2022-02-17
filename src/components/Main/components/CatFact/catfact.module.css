@@ -1,21 +1,13 @@
-.catFact {
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--back-color-catFact);
-    border-radius: 15px;
-    margin: 10px;
-}
-
-.title {
-    padding: 5px;
-    margin: 0;
-    font-size: 30px;
-    font-weight: bold;
-}
-
 .factDescription {
+    border-radius: 5px;
+    border: 1px solid black;
+    overflow: scroll;
     margin: 5px;
+    padding: 10px;
     font-size: 20px;
+}
+
+.catFact {
+    display: flex;
+    align-items: center;
 }

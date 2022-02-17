@@ -3,11 +3,9 @@
 :root {
     --back-color-header: #CBE3BF;
     --back-color-footer: #CBE3BF;
-    --back-color-body-light: #FBEC9B;
+    --back-color-body-light: #D9F0FA;
     --back-color-body-dark: #934E74;
-    --back-color-clock: #ABAB87;
-    --back-color-catFact: #FF884E;
-    --back-color-todoList: #A0A9D7;
+    --back-color-widget: #E6BAB1;
     --back-color-section: #8DF0B0;
 }
 
