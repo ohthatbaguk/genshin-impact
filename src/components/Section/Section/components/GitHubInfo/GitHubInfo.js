@@ -1,4 +1,4 @@
-import Widget from "src/components/WidgetContainer/Widget";
+import Widget from "src/components/Main/components/WidgetContainer/Widget";
 import styles from "./githubinfo.module.css";
 import useGitHubZen from "src/components/Section/Section/components/GitHubInfo/hooks/useGitHubZen";
 import useGitHubInfo from "src/components/Section/Section/components/GitHubInfo/hooks/useGitHubInfo";

@@ -1,5 +1,5 @@
-import WidgetContent from "./WidgetContent";
-import styles from "./widget.module.css";
+import WidgetContent from "src/components/Main/components/WidgetContainer/WidgetContent";
+import styles from "src/components/Main/components/WidgetContainer/widget.module.css";
 import classNames from "classnames";
 
 export default function Widget({

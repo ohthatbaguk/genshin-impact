@@ -1,17 +1,13 @@
 import Header from "./components/Header/Header";
 import styles from "./app.module.css";
-import { useState } from "react";
 import Main from "./components/Main/Main";
 import classNames from "classnames";
 import Section from "./components/Section/Section/Section";
 import Footer from "./components/Footer/Footer";
+import useToggle from "src/hooks/useToggle/useToggle";
 
 function App() {
-  const [isDarkTheme, setDarkTheme] = useState(false);
-
-  const handleClick = () => {
-    setDarkTheme((isDarkTheme) => !isDarkTheme);
-  };
+  const [isDarkTheme, toggleDarkTheme] = useToggle();
 
   return (
     <div
@@ -19,7 +15,7 @@ function App() {
         [styles.dark]: isDarkTheme,
       })}
     >
-      <button onClick={handleClick}>Change theme</button>
+      <button onClick={toggleDarkTheme}>Change theme</button>
       <Header />
       <Main />
       <Section />
