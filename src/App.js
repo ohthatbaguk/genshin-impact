@@ -7,7 +7,7 @@ import Footer from "./components/Footer/Footer";
 import useToggle from "src/hooks/useToggle/useToggle";
 
 function App() {
-  const [isDarkTheme, setDarkTheme] = useToggle();
+  const [isDarkTheme, toggleDarkTheme] = useToggle();
 
   return (
     <div
@@ -15,7 +15,7 @@ function App() {
         [styles.dark]: isDarkTheme,
       })}
     >
-      <button onClick={setDarkTheme}>Change theme</button>
+      <button onClick={toggleDarkTheme}>Change theme</button>
       <Header />
       <Main />
       <Section />

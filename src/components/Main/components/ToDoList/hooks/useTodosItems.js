@@ -16,6 +16,7 @@ export default function useTodosItems() {
   };
 
   const addItem = (item) => {
+    if (items.includes(item)) return;
     setItems((todos) => [item, ...todos]);
   };
 
