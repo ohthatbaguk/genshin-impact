@@ -1,6 +1,6 @@
 import styles from "./clock.module.css";
 import useDateTime from "./hooks/useDateTime";
-import Widget from "src/components/WidgetContainer/Widget";
+import Widget from "src/components/Main/components/WidgetContainer/Widget";
 
 export default function Clock() {
   const { date, time } = useDateTime();

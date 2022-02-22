@@ -1,6 +1,6 @@
 import styles from "./catfact.module.css";
 import useCatFact from "./hooks/useCatFact";
-import Widget from "src/components/WidgetContainer/Widget";
+import Widget from "src/components/Main/components/WidgetContainer/Widget";
 
 export default function CatFact() {
   const { loading, error, fact, getData } = useCatFact();
