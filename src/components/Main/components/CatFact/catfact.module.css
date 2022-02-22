@@ -1,0 +1,13 @@
+.factDescription {
+    border-radius: 5px;
+    border: 1px solid black;
+    overflow: scroll;
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.catFact {
+    display: flex;
+    align-items: center;
+}

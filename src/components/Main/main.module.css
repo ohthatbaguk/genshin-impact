@@ -1,0 +1,17 @@
+.title {
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+}
+
+.description {
+    text-align: center;
+    margin: 3px;
+    font-weight: bold;
+}
+
+.widgetContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,17 @@
+.date {
+    padding: 5px;
+    margin-top: 70px;
+    font-size: 25px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.time {
+    margin-top: 70px;
+    font-size: 25px;
+}
+
+.clock {
+    display: flex;
+    align-items: center;
+}
