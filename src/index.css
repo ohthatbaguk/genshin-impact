@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Short+Stack&display=swap');
 
 :root {
-    --back-color-header: #CBE3BF;
-    --back-color-footer: #CBE3BF;
-    --back-color-body-light: #D9F0FA;
+    --back-color-header: #FFF9AA;
+    --back-color-footer: #FFF9AA;
+    --back-color-body-light: #EDF4FF;
     --back-color-body-dark: #934E74;
-    --back-color-widget: #E6BAB1;
-    --back-color-section: #8DF0B0;
+    --back-color-widget: #D8E5E1;
+
 }
 
 html, body {
