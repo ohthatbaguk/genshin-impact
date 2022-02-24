@@ -4,10 +4,12 @@ import classNames from "classnames";
 import useSimon from "src/components/Section/Section/components/SimonGame/hooks/useSimon";
 
 export default function SimonGame() {
-  const [activeItem, handleClickStart, isDisabled, handleClick] = useSimon();
+  const [activeItem, handleClickStart, isDisabled, handleClick, sequence] =
+    useSimon();
 
   return (
     <Widget title="Simon Game" anotherClassname={styles.simonGame}>
+      <p>{sequence}</p>
       <section className={styles.buttons}>
         <button
           value="0"
