@@ -10,7 +10,11 @@ export default function useSimon() {
   const [length, setLength] = useState(5);
   const [isDisabled, setDisabled] = useState(true);
 
-  const onClick = async () => {
+  const handleClick = (e) => {
+    console.log(`Button ${e.target.value} was clicked`);
+  };
+
+  const handleClickStart = async () => {
     const randomSequence = randomSequenceGenerator(length, 4);
     for (let i = 0; i < randomSequence.length; i++) {
       setItem(randomSequence[i]);
@@ -21,5 +25,5 @@ export default function useSimon() {
     setDisabled(false);
   };
 
-  return [item, onClick, isDisabled];
+  return [item, handleClickStart, isDisabled, handleClick];
 }
