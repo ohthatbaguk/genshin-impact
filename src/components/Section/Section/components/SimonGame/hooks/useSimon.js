@@ -8,6 +8,7 @@ const PAUSE_TIMEOUT = 1000;
 export default function useSimon() {
   const [item, setItem] = useState();
   const [length, setLength] = useState(5);
+  const [isDisabled, setDisabled] = useState(true);
 
   const onClick = async () => {
     const randomSequence = randomSequenceGenerator(length, 4);
@@ -17,7 +18,8 @@ export default function useSimon() {
       setItem(null);
       await delay(PAUSE_TIMEOUT);
     }
+    setDisabled(false);
   };
 
-  return [item, onClick];
+  return [item, onClick, isDisabled];
 }

@@ -4,12 +4,13 @@ import classNames from "classnames";
 import useSimon from "src/components/Section/Section/components/SimonGame/hooks/useSimon";
 
 export default function SimonGame() {
-  const [activeItem, onClick] = useSimon();
+  const [activeItem, onClick, isDisabled] = useSimon();
 
   return (
     <Widget title="Simon Game" anotherClassname={styles.simonGame}>
       <section className={styles.buttons}>
         <button
+          disabled={isDisabled}
           className={classNames(styles.button, styles.red, {
             [styles.clicked]: activeItem === 0,
           })}
@@ -17,6 +18,7 @@ export default function SimonGame() {
           Red
         </button>
         <button
+          disabled={isDisabled}
           className={classNames(styles.button, styles.green, {
             [styles.clicked]: activeItem === 1,
           })}
@@ -24,6 +26,7 @@ export default function SimonGame() {
           Green
         </button>
         <button
+          disabled={isDisabled}
           className={classNames(styles.button, styles.blue, {
             [styles.clicked]: activeItem === 2,
           })}
@@ -31,6 +34,7 @@ export default function SimonGame() {
           Blue
         </button>
         <button
+          disabled={isDisabled}
           className={classNames(styles.button, styles.yellow, {
             [styles.clicked]: activeItem === 3,
           })}
