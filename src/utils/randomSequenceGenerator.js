@@ -1,6 +1,6 @@
-export default function randomSequenceGenerator(upperBoundary) {
+export default function randomSequenceGenerator(length, upperBoundary) {
   const arr = [];
-  for (let i = 0; i < upperBoundary; i++) {
+  for (let i = 0; i < length; i++) {
     arr.push(randomNumber(upperBoundary));
   }
   return arr;
