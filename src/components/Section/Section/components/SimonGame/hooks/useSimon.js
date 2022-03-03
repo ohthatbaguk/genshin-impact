@@ -2,16 +2,18 @@ import { useState } from "react";
 import randomSequenceGenerator from "src/utils/randomSequenceGenerator";
 import delay from "src/utils/delay";
 
-const CLICK_TIMEOUT = 1000;
-const PAUSE_TIMEOUT = 1000;
+const CLICK_TIMEOUT = 500;
+const PAUSE_TIMEOUT = 500;
 
 export default function useSimon() {
   const [item, setItem] = useState();
   const [length, setLength] = useState(5);
   const [isDisabled, setDisabled] = useState(true);
   const [sequence, setSequence] = useState();
+  const [input, setInput] = useState([]);
 
   const handleClick = (e) => {
+    setInput([...input, e.target.value]);
     console.log(`Button ${e.target.value} was clicked`);
   };
 
@@ -27,5 +29,5 @@ export default function useSimon() {
     setDisabled(false);
   };
 
-  return [item, handleClickStart, isDisabled, handleClick, sequence];
+  return [item, handleClickStart, isDisabled, handleClick, sequence, input];
 }
