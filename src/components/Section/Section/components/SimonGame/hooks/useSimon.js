@@ -1,9 +1,12 @@
 import { useState } from "react";
-import randomSequenceGenerator from "src/utils/randomSequenceGenerator";
+import randomSequenceGenerator, {
+  randomNumber,
+} from "src/utils/randomSequenceGenerator";
 import delay from "src/utils/delay";
 
 const CLICK_TIMEOUT = 500;
 const PAUSE_TIMEOUT = 500;
+const UPPER_BOUNDARY = 4;
 
 export default function useSimon() {
   const [item, setItem] = useState();
@@ -28,12 +31,17 @@ export default function useSimon() {
   };
 
   const handleClickStart = async () => {
+    let nextSequence;
+    if (sequence.length === 0) {
+      nextSequence = randomSequenceGenerator(length, UPPER_BOUNDARY);
+    } else {
+      nextSequence = [...sequence, randomNumber(UPPER_BOUNDARY)];
+    }
     setInput([]);
-    const randomSequence = randomSequenceGenerator(length, 4);
-    setSequence(randomSequence);
-    for (let i = 0; i < randomSequence.length; i++) {
+    setSequence(nextSequence);
+    for (let i = 0; i < nextSequence.length; i++) {
       await delay(CLICK_TIMEOUT);
-      setItem(randomSequence[i]);
+      setItem(nextSequence[i]);
       await delay(CLICK_TIMEOUT);
       setItem(null);
       await delay(PAUSE_TIMEOUT);

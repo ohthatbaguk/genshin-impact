@@ -6,6 +6,6 @@ export default function randomSequenceGenerator(length, upperBoundary) {
   return arr;
 }
 
-const randomNumber = (max) => {
+export const randomNumber = (max) => {
   return Math.floor(Math.random() * max);
 };
