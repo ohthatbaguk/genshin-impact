@@ -29,6 +29,7 @@ export default function Form() {
       />
       <TextField
         className={styles.field}
+        type="text"
         name="lastName"
         id="standard-basic"
         label="Last Name"
@@ -36,12 +37,14 @@ export default function Form() {
       />
       <TextField
         className={styles.field}
+        type="text"
         name="login"
         id="standard-basic"
         label="Login"
         variant="standard"
       />
       <TextField
+        type="password"
         className={styles.field}
         name="password"
         id="standard-basic"
@@ -49,6 +52,7 @@ export default function Form() {
         variant="standard"
       />
       <TextField
+        type="password"
         className={styles.field}
         name="repeatPassword"
         id="standard-basic"
@@ -56,6 +60,7 @@ export default function Form() {
         variant="standard"
       />
       <TextField
+        type="number"
         className={styles.field}
         name="age"
         id="standard-basic"
@@ -63,13 +68,16 @@ export default function Form() {
         variant="standard"
       />
       <TextField
+        type="text"
         className={styles.field}
         name="email"
         id="standard-basic"
         label="Email"
         variant="standard"
       />
-      <input className={styles.field} name="file" type="file" />
+      <Button className={styles.field} variant="contained" component="label">
+        <input name="file" type="file" />
+      </Button>
       <Button className={styles.submitButton} type="submit" variant="contained">
         Submit
       </Button>
