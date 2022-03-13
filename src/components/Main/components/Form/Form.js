@@ -1,86 +1,38 @@
 import styles from "./form.module.css";
-import { Button, TextField } from "@mui/material";
+import useForm from "src/components/Main/components/Form/hooks/useForm";
+import validators from "src/components/Main/components/Form/validators";
+import TextField from "src/components/Main/components/TextField/TextField";
+import React from "react";
+import { Provider } from "src/components/Main/components/Form/formContext";
 
 export default function Form() {
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(e.target);
-    console.log(formData.get("firstName"));
-    console.log(formData.get("lastName"));
-    console.log(formData.get("login"));
-    console.log(formData.get("password"));
-    console.log(formData.get("repeatPassword"));
-    console.log(formData.get("age"));
-    console.log(formData.get("email"));
-    console.log(formData.get("file"));
+  const onSubmit = (values) => {
+    console.log(values);
   };
 
+  const { values, changeHandler, errors, isValid, isTouched, handleSubmit } =
+    useForm({}, validators, onSubmit);
+
   return (
-    <form name="signUpForm" onSubmit={onSubmit} className={styles.form}>
+    <form name="signUpForm" onSubmit={handleSubmit} className={styles.form}>
       <h1 className={styles.title}>Sign Up</h1>
-      <TextField
-        className={styles.field}
-        type="text"
-        name="firstName"
-        id="standard-basic"
-        label="First Name"
-        variant="standard"
-      />
-      <TextField
-        className={styles.field}
-        type="text"
-        name="lastName"
-        id="standard-basic"
-        label="Last Name"
-        variant="standard"
-      />
-      <TextField
-        className={styles.field}
-        type="text"
-        name="login"
-        id="standard-basic"
-        label="Login"
-        variant="standard"
-      />
-      <TextField
-        type="password"
-        className={styles.field}
-        name="password"
-        id="standard-basic"
-        label="Password"
-        variant="standard"
-      />
-      <TextField
-        type="password"
-        className={styles.field}
-        name="repeatPassword"
-        id="standard-basic"
-        label="Repeat password"
-        variant="standard"
-      />
-      <TextField
-        type="number"
-        className={styles.field}
-        name="age"
-        id="standard-basic"
-        label="Age"
-        variant="standard"
-      />
-      <TextField
-        type="text"
-        className={styles.field}
-        name="email"
-        id="standard-basic"
-        label="Email"
-        variant="standard"
-      />
-      <Button className={styles.field} variant="contained" component="label">
-        <input name="file" type="file" />
-      </Button>
-      <Button className={styles.submitButton} type="submit" variant="contained">
+      <Provider value={{ values, errors, isTouched, changeHandler }}>
+        <TextField title="First Name" name="firstName" type="text" />
+        <TextField title="Last Name" name="lastName" />
+        <TextField title="Login" name="login" />
+        <TextField title="Password" name="password" type="password" />
+        <TextField
+          title="Repeat password"
+          name="repeatPassword"
+          type="password"
+        />
+        <TextField title="Age" name="age" type="number" />
+        <TextField title="Email" name="email" type="email" />
+      </Provider>
+      <input name="file" type="file" />
+      <button disabled={!isValid} className={styles.submitButton} type="submit">
         Submit
-      </Button>
+      </button>
     </form>
   );
 }

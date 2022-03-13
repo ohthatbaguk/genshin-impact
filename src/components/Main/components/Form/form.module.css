@@ -15,5 +15,12 @@
 }
 
 .field {
-    margin: 10px !important;
+    width: 300px;
+    margin: 3px !important;
+}
+
+.error {
+    margin: 0;
+    font-size: 10px;
+    color: red;
 }
