@@ -1,5 +1,6 @@
 import styles from "./main.module.css";
 import Form from "src/components/Main/components/Form/Form";
+import LoginForm from "src/components/Main/components/LoginForm/LoginForm";
 
 export default function Main() {
   return (
@@ -12,6 +13,7 @@ export default function Main() {
         </p>
       </article>
       <Form />
+      <LoginForm />
 
       {/*<section className={styles.widgetContainer}>*/}
       {/*  <Clock />*/}
