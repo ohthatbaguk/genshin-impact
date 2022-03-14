@@ -26,7 +26,7 @@ export default function LoginForm() {
       <label>
         Login
         <input onChange={handleChange} name="login" type="text" />
-        {errors.login ?? ""}
+        {errors.login?.join(", ") ?? ""}
       </label>
       <label>
         Password
