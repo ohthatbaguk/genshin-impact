@@ -1,8 +1,8 @@
 import styles from "./loginForm.module.css";
 import validators from "src/components/Main/components/LoginForm/validators";
-import TextField from "src/components/Main/components/TextField/TextField";
-import { Provider } from "src/components/Main/components/Form/formContext";
-import useForm from "src/hooks/useForm/useForm";
+import Field from "src/feature/form/components/Field/Field";
+import { Provider } from "src/feature/form/formContext";
+import useForm from "src/feature/form/hooks/useForm/useForm";
 import React from "react";
 
 export default function LoginForm() {
@@ -18,8 +18,8 @@ export default function LoginForm() {
   return (
     <form onSubmit={handleSubmit} className={styles.loginForm}>
       <Provider value={{ values, errors, isTouched, changeHandler }}>
-        <TextField name="login" title="Login" />
-        <TextField name="password" type="password" title="Password" />
+        <Field name="login" title="Login" />
+        <Field name="password" type="password" title="Password" />
       </Provider>
       <button disabled={!isValid} type="submit">
         Login
