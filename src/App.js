@@ -1,10 +1,9 @@
-import Header from "./components/Header/Header";
 import styles from "./app.module.css";
-import Main from "./components/Main/Main";
 import classNames from "classnames";
-import Section from "./components/Section/Section/Section";
-import Footer from "./components/Footer/Footer";
 import useToggle from "src/hooks/useToggle/useToggle";
+import Header from "src/components/Header/Header";
+import Footer from "src/components/Footer/Footer";
+import Main from "src/components/Main/Main";
 
 function App() {
   const [isDarkTheme, toggleDarkTheme] = useToggle();
@@ -18,7 +17,7 @@ function App() {
       <button onClick={toggleDarkTheme}>Change theme</button>
       <Header />
       <Main />
-      <Section />
+      {/*<Section />*/}
       <Footer />
     </div>
   );
