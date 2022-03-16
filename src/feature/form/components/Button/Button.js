@@ -1,4 +1,4 @@
-import styles from "./button.module.css";
+import styles from "src/feature/form/components/Button/button.module.css";
 
 export default function Button({ title, type = "submit", isValid }) {
   return (
