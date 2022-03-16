@@ -2,6 +2,7 @@ import styles from "./loginForm.module.css";
 import validators from "src/components/Main/components/LoginForm/validators";
 import React from "react";
 import { Field, Provider, useForm } from "src/feature/form";
+import Button from "src/components/Main/components/Button/Button";
 
 export default function LoginForm() {
   const onSubmit = (values) => {
@@ -18,9 +19,7 @@ export default function LoginForm() {
         <Field name="login" title="Login" />
         <Field name="password" type="password" title="Password" />
       </Provider>
-      <button disabled={!isValid} type="submit">
-        Login
-      </button>
+      <Button title="Login" isValid={!isValid} />
     </form>
   );
 }

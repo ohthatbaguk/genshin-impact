@@ -2,6 +2,7 @@ import styles from "src/components/Main/components/SignUpForm/signUpForm.module.
 import validators from "src/components/Main/components/SignUpForm/validators";
 import React from "react";
 import { Field, Provider, useForm } from "src/feature/form";
+import Button from "src/components/Main/components/Button/Button";
 
 export default function SignUpForm() {
   const onSubmit = (values) => {
@@ -24,9 +25,7 @@ export default function SignUpForm() {
         <Field title="Email" name="email" type="email" />
       </Provider>
       <input name="file" type="file" />
-      <button disabled={!isValid} className={styles.submitButton} type="submit">
-        Submit
-      </button>
+      <Button isValid={!isValid} title="Submit" />
     </form>
   );
 }
