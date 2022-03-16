@@ -1,9 +1,7 @@
 import styles from "./loginForm.module.css";
 import validators from "src/components/Main/components/LoginForm/validators";
-import Field from "src/feature/form/components/Field/Field";
-import { Provider } from "src/feature/form/formContext";
-import useForm from "src/feature/form/hooks/useForm/useForm";
 import React from "react";
+import { Field, Provider, useForm } from "src/feature/form";
 
 export default function LoginForm() {
   const onSubmit = (values) => {
@@ -14,7 +12,6 @@ export default function LoginForm() {
   const { values, changeHandler, errors, isValid, isTouched, handleSubmit } =
     useForm({}, validators, onSubmit);
 
-  console.log(errors);
   return (
     <form onSubmit={handleSubmit} className={styles.loginForm}>
       <Provider value={{ values, errors, isTouched, changeHandler }}>

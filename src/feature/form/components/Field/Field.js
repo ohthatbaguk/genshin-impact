@@ -1,6 +1,6 @@
-import styles from "src/feature/form/components/Field/textField.module.css";
+import styles from "src/feature/form/components/Field/field.module.css";
 import { useContext } from "react";
-import { formContext } from "src/feature/form/formContext";
+import { formContext } from "src/feature/form";
 
 export default function Field({ title, name, type = "text" }) {
   const { values, errors, isTouched, changeHandler } = useContext(formContext);
