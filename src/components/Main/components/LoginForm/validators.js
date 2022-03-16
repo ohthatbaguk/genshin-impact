@@ -17,7 +17,7 @@ export default [
     if (firstSymbol === firstSymbol.toUpperCase()) {
       loginErrors.push("Login should start with a small letter");
     }
-    return { login: loginErrors };
+    return loginErrors.length ? { login: loginErrors } : null;
   },
 
   ({ password }) => {
