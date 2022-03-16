@@ -37,7 +37,6 @@
 
 .mainDiv > section {
     grid-area: section;
-    background-color: var(--back-color-section);
 }
 
 

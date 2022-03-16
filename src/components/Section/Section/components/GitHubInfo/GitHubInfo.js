@@ -17,7 +17,7 @@ export default function GitHubInfo() {
       <p className={styles.description}>
         have {info.public_repos} public repositories
       </p>
-      <p className={styles.description}>have {info.followers} followers}</p>
+      <p className={styles.description}>have {info.followers} followers</p>
       <p className={styles.description}>{info.name}</p>
       <p className={styles.description}>{`(${info.login})`}</p>
       <p className={styles.description}>{info.location}</p>

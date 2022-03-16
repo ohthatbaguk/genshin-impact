@@ -1,0 +1,58 @@
+
+.simonGame {
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 2.5em;
+    line-height: 2.5em;
+    text-align: center;
+    text-shadow: 0 -1px 5px black;
+    color: #fff;
+    border-radius: 5px;
+    border: 0;
+}
+
+.buttons {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 7px;
+}
+
+.button:active {
+    top: .1em;
+    left: .1em;
+    box-shadow: 0 0 0 60px rgba(0, 0, 0, .05) inset;
+}
+
+.clicked {
+    top: .1em;
+    left: .1em;
+    box-shadow: 0 0 0 60px rgba(0, 0, 0, .05) inset !important;
+}
+
+.green {
+    background: linear-gradient(to left top, #05371d, #18622a, #3d8f30, #6dbd2c, #a8eb12);
+    box-shadow: 5px 5px 5px green;
+}
+
+.red {
+    background: linear-gradient(to left top, #e11414, #e43a34, #e4544f, #e26a68, #dd7f7f);
+    box-shadow: 5px 5px 5px red;
+}
+
+.blue {
+    background-image: linear-gradient(to left top, #1484e1, #009de6, #00b3e5, #4ac7e0, #7fd9dd);
+    box-shadow: 5px 5px 5px #00b3e5;
+}
+
+.yellow {
+    background: linear-gradient(to left top, #fff800, #f2f141, #e7ea5f, #dce276, #d3da8b);
+    box-shadow: 5px 5px 5px yellow;
+}
