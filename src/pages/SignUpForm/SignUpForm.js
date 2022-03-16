@@ -1,5 +1,5 @@
-import styles from "src/components/Main/components/SignUpForm/signUpForm.module.css";
-import validators from "src/components/Main/components/SignUpForm/validators";
+import styles from "src/pages/SignUpForm/signUpForm.module.css";
+import validators from "src/pages/SignUpForm/validators";
 import React from "react";
 import { Button, Field, Provider, useForm } from "src/feature/form";
 

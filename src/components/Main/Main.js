@@ -1,6 +1,8 @@
 import styles from "./main.module.css";
-import Form from "src/components/Main/components/SignUpForm/SignUpForm";
-import LoginForm from "src/components/Main/components/LoginForm/LoginForm";
+import Clock from "src/components/Main/components/Clock/Clock";
+import CatFact from "src/components/Main/components/CatFact/CatFact";
+import ToDoList from "src/components/Main/components/ToDoList/ToDoList";
+import Section from "src/components/Section/Section/Section";
 
 export default function Main() {
   return (
@@ -12,14 +14,12 @@ export default function Main() {
           be improved as new knowledge comes in.
         </p>
       </article>
-      <Form />
-      <LoginForm />
-
-      {/*<section className={styles.widgetContainer}>*/}
-      {/*  <Clock />*/}
-      {/*  <CatFact />*/}
-      {/*  <ToDoList />*/}
-      {/*</section>*/}
+      <section className={styles.widgetContainer}>
+        <Clock />
+        <CatFact />
+        <ToDoList />
+      </section>
+      <Section />
     </main>
   );
 }
