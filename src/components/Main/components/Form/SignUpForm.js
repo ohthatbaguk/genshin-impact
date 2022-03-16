@@ -1,11 +1,11 @@
 import styles from "./form.module.css";
-import useForm from "src/components/Main/components/Form/hooks/useForm";
 import validators from "src/components/Main/components/Form/validators";
 import TextField from "src/components/Main/components/TextField/TextField";
 import React from "react";
 import { Provider } from "src/components/Main/components/Form/formContext";
+import useForm from "src/hooks/useForm/useForm";
 
-export default function Form() {
+export default function SignUpForm() {
   const onSubmit = (values) => {
     console.log(values);
   };

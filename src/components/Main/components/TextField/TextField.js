@@ -17,7 +17,7 @@ export default function TextField({ title, name, type = "text" }) {
         name={name}
       />
       {isTouched[name] && errors[name] && (
-        <p className={styles.error}>{errors[name]}</p>
+        <p className={styles.error}>{errors[name]?.join("! ")}</p>
       )}
     </label>
   );
