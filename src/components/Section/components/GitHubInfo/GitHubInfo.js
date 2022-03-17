@@ -1,7 +1,7 @@
 import Widget from "src/components/Main/components/WidgetContainer/Widget";
-import styles from "./githubinfo.module.css";
-import useGitHubZen from "src/components/Section/Section/components/GitHubInfo/hooks/useGitHubZen";
-import useGitHubInfo from "src/components/Section/Section/components/GitHubInfo/hooks/useGitHubInfo";
+import styles from "src/components/Section/components/GitHubInfo/githubinfo.module.css";
+import useGitHubZen from "src/components/Section/components/GitHubInfo/hooks/useGitHubZen";
+import useGitHubInfo from "src/components/Section/components/GitHubInfo/hooks/useGitHubInfo";
 
 export default function GitHubInfo() {
   const zen = useGitHubZen();

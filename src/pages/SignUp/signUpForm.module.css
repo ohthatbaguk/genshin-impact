@@ -12,7 +12,7 @@
 
 .field {
     width: 300px;
-    margin: 3px !important;
+    margin: 3px;
 }
 
 .error {

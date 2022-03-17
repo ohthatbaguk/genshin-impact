@@ -1,7 +1,7 @@
-import styles from "src/components/Main/components/SignUpForm/signUpForm.module.css";
-import validators from "src/components/Main/components/SignUpForm/validators";
+import styles from "src/pages/SignUp/signUpForm.module.css";
 import React from "react";
 import { Button, Field, Provider, useForm } from "src/feature/form";
+import { validators } from "src/pages/SignUp/index";
 
 export default function SignUpForm() {
   const onSubmit = (values) => {
