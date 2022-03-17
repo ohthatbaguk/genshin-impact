@@ -1,8 +1,8 @@
 import styles from "src/pages/Login/loginForm.module.css";
-import validators from "src/pages/Login/validators";
 import React from "react";
 import { Button, Field, Provider, useForm } from "src/feature/form";
 import { Link } from "react-router-dom";
+import { validators } from "src/pages/Login/index";
 
 export default function LoginForm() {
   const onSubmit = (values) => {

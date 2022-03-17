@@ -1,5 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { Home, LoginForm, SignUpForm } from "src/pages";
+import { Home } from "src/pages/Home";
+import { LoginForm } from "src/pages/Login";
+import { SignUpForm } from "src/pages/SignUp";
 
 function App() {
   return (
