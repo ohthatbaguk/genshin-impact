@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useOpenClose from "src/hooks/useOpenClose/useOpenClose";
+import useOpenClose from "src/hooks/useOpenClose";
 
 export default function useCatFact() {
   const { loading, startLoading, endLoading } = useOpenClose();

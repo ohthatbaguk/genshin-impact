@@ -1,25 +1,16 @@
-import styles from "./app.module.css";
-import classNames from "classnames";
-import useToggle from "src/hooks/useToggle/useToggle";
-import Header from "src/components/Header/Header";
-import Footer from "src/components/Footer/Footer";
-import Main from "src/components/Main/Main";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { Home } from "src/pages/Home";
+import { LoginForm } from "src/pages/Login";
+import { SignUpForm } from "src/pages/SignUp";
 
 function App() {
-  const [isDarkTheme, toggleDarkTheme] = useToggle();
-
   return (
-    <div
-      className={classNames(styles.mainDiv, styles.light, {
-        [styles.dark]: isDarkTheme,
-      })}
-    >
-      <button onClick={toggleDarkTheme}>Change theme</button>
-      <Header />
-      <Main />
-      {/*<Section />*/}
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/login" element={<LoginForm />} />
+      <Route path="/sign-up" element={<SignUpForm />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/*" element={<Navigate replace to="/" />} />
+    </Routes>
   );
 }
 
