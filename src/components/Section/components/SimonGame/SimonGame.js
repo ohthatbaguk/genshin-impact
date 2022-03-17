@@ -1,7 +1,7 @@
 import Widget from "src/components/Main/components/WidgetContainer/Widget";
-import styles from "./simongame.module.css";
+import styles from "src/components/Section/components/SimonGame/simongame.module.css";
 import classNames from "classnames";
-import useSimon from "src/components/Section/Section/components/SimonGame/hooks/useSimon";
+import useSimon from "src/components/Section/components/SimonGame/hooks/useSimon";
 
 export default function SimonGame() {
   const [activeItem, handleClickStart, isDisabled, handleClick, level] =
