@@ -2,7 +2,6 @@ import styles from "./main.module.css";
 import Clock from "src/components/Main/components/Clock/Clock";
 import CatFact from "src/components/Main/components/CatFact/CatFact";
 import ToDoList from "src/components/Main/components/ToDoList/ToDoList";
-import Section from "src/components/Section/Section/Section";
 
 export default function Main() {
   return (
@@ -19,7 +18,6 @@ export default function Main() {
         <CatFact />
         <ToDoList />
       </section>
-      <Section />
     </main>
   );
 }

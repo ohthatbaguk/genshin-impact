@@ -1,7 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import LoginForm from "src/pages/Login/LoginForm/LoginForm";
-import SignUpForm from "src/pages/SignUpForm/SignUpForm";
-import Home from "src/pages/Home/Home";
+import { Home, LoginForm, SignUpForm } from "src/pages";
 
 function App() {
   return (
