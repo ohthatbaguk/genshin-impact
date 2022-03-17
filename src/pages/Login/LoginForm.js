@@ -4,11 +4,10 @@ import { Button, Field } from "src/feature/form";
 import { Link } from "react-router-dom";
 import Form from "src/feature/form/components/Form/Form";
 import validators from "src/pages/Login/validators";
-import { saveToLocalStorage } from "src/services/localStorage";
 
 export default function LoginForm() {
   const onSubmit = (values) => {
-    saveToLocalStorage("login", values);
+    console.log(values);
   };
 
   return (
