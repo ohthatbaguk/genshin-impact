@@ -1,22 +1,13 @@
 import styles from "src/pages/Login/loginForm.module.css";
-import React, { useState } from "react";
+import React from "react";
 import { Button, Field } from "src/feature/form";
 import { Link } from "react-router-dom";
 import Form from "src/feature/form/components/Form/Form";
 import validators from "src/pages/Login/validators";
-import { getFromLocalStorage } from "src/services/localStorage";
+import useLoginForm from "src/pages/Login/hooks/useLoginForm";
 
 export default function LoginForm() {
-  const localData = getFromLocalStorage("newUser");
-  const [error, setError] = useState("");
-
-  const onSubmit = (values) => {
-    const isValid =
-      values.login !== localData.login ||
-      values.password !== localData.password;
-
-    isValid ? setError("Something went wrong") : setError("");
-  };
+  const { error, onSubmit } = useLoginForm("newUser");
 
   return (
     <Form
@@ -30,7 +21,7 @@ export default function LoginForm() {
       <Link className={styles.link} to="/sign-up">
         No account? Create a new one.
       </Link>
-      {error}
+      <p>{error}</p>
     </Form>
   );
 }
