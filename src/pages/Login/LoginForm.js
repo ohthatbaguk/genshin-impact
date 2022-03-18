@@ -4,12 +4,10 @@ import { Button, Field } from "src/feature/form";
 import { Link } from "react-router-dom";
 import Form from "src/feature/form/components/Form/Form";
 import validators from "src/pages/Login/validators";
+import useLoginForm from "src/pages/Login/hooks/useLoginForm";
 
 export default function LoginForm() {
-  const onSubmit = (values) => {
-    console.log(`The login is ${values.login}`);
-    console.log(`The password is ${values.password}`);
-  };
+  const { error, onSubmit } = useLoginForm("newUser");
 
   return (
     <Form
@@ -21,8 +19,9 @@ export default function LoginForm() {
       <Field name="password" type="password" title="Password" />
       <Button title="Login" />
       <Link className={styles.link} to="/sign-up">
-        No account? Create a new one
+        No account? Create a new one.
       </Link>
+      <p>{error}</p>
     </Form>
   );
 }
