@@ -1,5 +1,5 @@
 import styles from "src/pages/SignUp/signUpForm.module.css";
-import React from "react";
+import React, { useState } from "react";
 import { Button, Field } from "src/feature/form";
 import Form from "src/feature/form/components/Form/Form";
 import validators from "src/pages/SignUp/validators";
@@ -7,14 +7,24 @@ import {
   getFromLocalStorage,
   saveToLocalStorage,
 } from "src/services/localStorage";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUpForm() {
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
   const onSubmit = (values) => {
     let users = getFromLocalStorage("users");
     if (!Array.isArray(users)) {
       users = [];
     }
-    saveToLocalStorage("users", [...users, values]);
+
+    if (users.find((item) => item.login === values.login)) {
+      setError("User already exist!");
+    } else {
+      saveToLocalStorage("users", [...users, values]);
+      navigate("/login");
+    }
   };
 
   return (
@@ -28,6 +38,7 @@ export default function SignUpForm() {
       <Field title="Age" name="age" type="number" />
       <Field title="Email" name="email" type="email" />
       <Button title="Submit" />
+      <p>{error ?? ""}</p>
     </Form>
   );
 }
