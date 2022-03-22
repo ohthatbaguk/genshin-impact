@@ -3,11 +3,18 @@ import React from "react";
 import { Button, Field } from "src/feature/form";
 import Form from "src/feature/form/components/Form/Form";
 import validators from "src/pages/SignUp/validators";
-import { saveToLocalStorage } from "src/services/localStorage";
+import {
+  getFromLocalStorage,
+  saveToLocalStorage,
+} from "src/services/localStorage";
 
 export default function SignUpForm() {
   const onSubmit = (values) => {
-    saveToLocalStorage("newUser", values);
+    let users = getFromLocalStorage("users");
+    if (!Array.isArray(users)) {
+      users = [];
+    }
+    saveToLocalStorage("users", [...users, values]);
   };
 
   return (
