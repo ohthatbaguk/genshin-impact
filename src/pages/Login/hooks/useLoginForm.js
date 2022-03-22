@@ -1,9 +1,11 @@
 import { getFromLocalStorage } from "src/services/localStorage";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function useLoginForm(key) {
   const localData = getFromLocalStorage(key);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const onSubmit = (values) => {
     if (values.login !== localData.login) {
@@ -12,6 +14,7 @@ export default function useLoginForm(key) {
       setError("Invalid credentials!");
     } else {
       setError("");
+      navigate("/");
     }
   };
 
