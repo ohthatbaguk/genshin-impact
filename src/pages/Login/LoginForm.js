@@ -21,7 +21,7 @@ export default function LoginForm() {
       <Link className={styles.link} to="/sign-up">
         No account? Create a new one.
       </Link>
-      <p>{error}</p>
+      <p className={styles.error}>{error}</p>
     </Form>
   );
 }

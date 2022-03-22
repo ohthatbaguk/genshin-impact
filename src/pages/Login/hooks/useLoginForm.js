@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function useLoginForm(key) {
   const localData = getFromLocalStorage(key);
   const [error, setError] = useState("");
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const onSubmit = (values) => {
     if (values.login !== localData.login) {
