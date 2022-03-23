@@ -8,9 +8,11 @@ export default function useLoginForm(key) {
   const navigate = useNavigate();
 
   const onSubmit = (values) => {
-    if (values.login !== localData.login) {
+    const storedData = localData.find((user) => user.login === values.login);
+
+    if (values.login !== storedData.login) {
       setError("User not found!");
-    } else if (values.password !== localData.password) {
+    } else if (values.password !== storedData.password) {
       setError("Invalid credentials!");
     } else {
       setError("");
