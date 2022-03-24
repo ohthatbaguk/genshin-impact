@@ -5,6 +5,12 @@ export default function auth(values) {
 
   const user = data?.find((user) => user.login === values.login);
 
-  if (!user) return "User not found!";
-  if (values.password !== user.password) return "Invalid credentials!";
+  let error;
+  if (!user) {
+    error = "User not found!";
+  } else if (values.password !== user.password) {
+    error = "Invalid credentials!";
+  }
+
+  return { user, error };
 }

@@ -1,18 +1,20 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import auth from "src/feature/api/auth";
+import { saveToLocalStorage } from "src/services/localStorage";
 
 export default function useLoginForm() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const onSubmit = (values) => {
-    const result = auth(values);
+    const { user, error } = auth(values);
 
-    if (result) {
-      setError(result);
+    if (error) {
+      setError(error);
       return;
     }
+    saveToLocalStorage("currentUser", user);
     navigate("/");
   };
 
