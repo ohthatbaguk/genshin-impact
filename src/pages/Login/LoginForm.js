@@ -7,7 +7,7 @@ import validators from "src/pages/Login/validators";
 import useLoginForm from "src/pages/Login/hooks/useLoginForm";
 
 export default function LoginForm() {
-  const { error, onSubmit } = useLoginForm("users");
+  const { error, onSubmit } = useLoginForm();
 
   return (
     <Form
