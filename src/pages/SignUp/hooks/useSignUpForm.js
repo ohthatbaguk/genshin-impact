@@ -9,11 +9,11 @@ export default function useSignUpForm() {
   const onSubmit = (values) => {
     const result = signUp(values);
 
-    if (!result) {
-      navigate("/login");
-    } else {
+    if (result) {
       setError(result);
+      return;
     }
+    navigate("/login");
   };
 
   return { error, onSubmit };
