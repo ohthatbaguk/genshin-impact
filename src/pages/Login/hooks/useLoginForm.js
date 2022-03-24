@@ -7,13 +7,13 @@ export default function useLoginForm() {
   const navigate = useNavigate();
 
   const onSubmit = (values) => {
-    const result = auth(values, "users");
+    const result = auth(values);
 
-    if (!result) {
-      navigate("/");
-    } else {
+    if (result) {
       setError(result);
+      return;
     }
+    navigate("/");
   };
 
   return { error, onSubmit };
