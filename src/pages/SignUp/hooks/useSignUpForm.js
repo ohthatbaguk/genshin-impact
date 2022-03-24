@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import auth from "src/feature/api/auth";
+import signUp from "src/feature/api/signUp";
 
-export default function useLoginForm() {
+export default function useSignUpForm() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const onSubmit = (values) => {
-    const result = auth(values, "users");
+    const result = signUp(values);
 
     if (!result) {
-      navigate("/");
+      navigate("/login");
     } else {
       setError(result);
     }
