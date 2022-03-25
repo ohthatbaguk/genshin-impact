@@ -17,10 +17,10 @@ export default function Aside() {
         {data ? (
           <ProfileInfo data={data} />
         ) : (
-          <button onClick={onClick}>Login</button>
+          <button onClick={onClick}>Login & SignUp</button>
         )}
       </section>
-      {data ? (
+      {!!data ? (
         <img
           className={styles.avatar}
           src="https://avatars.githubusercontent.com/u/72410940?v=4"
