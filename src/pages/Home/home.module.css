@@ -3,7 +3,7 @@
     min-height: 100vh;
     grid-gap: 3px;
     grid-template-areas:
-            ". . head head head head head head . ."
+            ". . . head head head head user user user"
             ". . main main main main main main . ."
             ". section section section section section section section section ."
             ". foot foot foot foot foot foot foot foot .";
@@ -24,6 +24,10 @@
 .mainDiv > header {
     grid-area: head;
     background-color: var(--back-color-header);
+}
+
+.mainDiv > aside {
+    grid-area: user;
 }
 
 .mainDiv > main {
