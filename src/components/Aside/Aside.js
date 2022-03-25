@@ -1,6 +1,6 @@
 import styles from "./aside.module.css";
 import { getFromLocalStorage } from "src/services/localStorage";
-import ProfileInfo from "src/components/Aside/components/ProfileInfo";
+import ProfileInfo from "src/components/Aside/components/ProfileInfo/ProfileInfo";
 import { useNavigate } from "react-router-dom";
 
 export default function Aside() {
