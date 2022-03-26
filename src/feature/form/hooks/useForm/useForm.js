@@ -3,7 +3,6 @@ import { useState } from "react";
 export default function useForm(initialState = {}, validators = [], onSubmit) {
   const [values, setValues] = useState(initialState);
   const { errors, isValid } = validate(values, validators);
-
   const [isTouched, setTouched] = useState({});
 
   const changeHandler = (e) => {

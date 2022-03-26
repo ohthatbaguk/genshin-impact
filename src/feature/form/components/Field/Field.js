@@ -6,8 +6,8 @@ export default function Field({ title, name, type = "text" }) {
   const { values, errors, isTouched, changeHandler } = useContext(formContext);
 
   return (
-    <label>
-      {title}
+    <>
+      <label htmlFor={name}>{title}</label>
       <input
         value={values[name] ?? ""}
         onChange={changeHandler}
@@ -15,10 +15,11 @@ export default function Field({ title, name, type = "text" }) {
         className={styles.field}
         type={type}
         name={name}
+        id={name}
       />
       {isTouched[name] && errors[name] && (
         <p className={styles.error}>{errors[name]?.join("! ")}</p>
       )}
-    </label>
+    </>
   );
 }
