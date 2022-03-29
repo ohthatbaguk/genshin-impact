@@ -12,6 +12,14 @@ export default function signUp(values) {
   if (users.find((item) => item.login === values.login)) {
     return "User already exist!";
   } else {
-    saveToLocalStorage("users", [...users, values]);
+    const user = {
+      age: values.age,
+      email: values.email,
+      firstName: values.firstName,
+      lastName: values.lastName,
+      login: values.login,
+      password: values.password,
+    };
+    saveToLocalStorage("users", [...users, user]);
   }
 }

@@ -1,8 +1,9 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { Home } from "src/pages/Home";
 import { LoginForm } from "src/pages/Login";
 import { SignUpForm } from "src/pages/SignUp";
-import Profile from "src/components/Aside/components/Profile/Profile";
+import Profile from "src/pages/Profile/Profile";
+import EditProfile from "src/pages/EditProfile/EditProfile";
+import { Home } from "src/pages/Home";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Route path="/login" element={<LoginForm />} />
       <Route path="/sign-up" element={<SignUpForm />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/edit-profile" element={<EditProfile />} />
       <Route path="/" element={<Home />} />
       <Route path="/*" element={<Navigate replace to="/" />} />
     </Routes>
