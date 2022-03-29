@@ -25,7 +25,7 @@ export default function EditProfile() {
       <section className={styles.fields}>
         <Field title="First Name" name="firstName" type="text" />
         <Field title="Last Name" name="lastName" />
-        <Field title="Login" name="login" />
+        <Field disabled title="Login" name="login" />
         <Field title="Age" name="age" type="number" />
         <Field title="Email" name="email" type="email" />
       </section>
