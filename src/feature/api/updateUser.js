@@ -1,16 +1,20 @@
-import {
-  getFromLocalStorage,
-  saveToLocalStorage,
-} from "src/services/localStorage";
+export default async function updateUser(values) {
+  const headers = { "Content-Type": "application/json" };
 
-export default function updateUser(values) {
-  const users = getFromLocalStorage("users");
+  const body = JSON.stringify({
+    age: values.age,
+    email: values.email,
+    firstName: values.firstName,
+    lastName: values.lastName,
+    login: values.login,
+    password: values.password,
+  });
 
-  const user = users.find((item) => item.login === values.login);
-  user.firstName = values.firstName;
-  user.lastName = values.lastName;
-  user.age = values.age;
-  user.email = values.email;
+  const { error } = await fetch("http://localhost:3000/user", {
+    method: "PUT",
+    headers,
+    body,
+  }).then((r) => r.json());
 
-  saveToLocalStorage("users", users);
+  return error;
 }
