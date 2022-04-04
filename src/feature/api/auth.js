@@ -1,16 +1,12 @@
-export default async function auth(values) {
-  const headers = { "Content-Type": "application/json" };
+import doApiRequest from "src/feature/api/doApiRequest";
 
-  const body = JSON.stringify({
+export default async function auth(values) {
+  const body = {
     login: values.login,
     password: values.password,
-  });
+  };
 
-  const { user, error } = await fetch("http://localhost:3000/login", {
-    method: "POST",
-    headers,
-    body,
-  }).then((r) => r.json());
+  const { user, error } = await doApiRequest("login", body);
 
   return { user, error };
 }

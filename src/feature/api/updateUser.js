@@ -1,20 +1,16 @@
-export default async function updateUser(values) {
-  const headers = { "Content-Type": "application/json" };
+import doApiRequest from "src/feature/api/doApiRequest";
 
-  const body = JSON.stringify({
+export default async function updateUser(values) {
+  const body = {
     age: values.age,
     email: values.email,
     firstName: values.firstName,
     lastName: values.lastName,
     login: values.login,
     password: values.password,
-  });
+  };
 
-  const { error } = await fetch("http://localhost:3000/user", {
-    method: "PUT",
-    headers,
-    body,
-  }).then((r) => r.json());
+  const { error } = await doApiRequest("user", body, "PUT");
 
   return error;
 }
