@@ -1,25 +1,20 @@
-import {
-  getFromLocalStorage,
-  saveToLocalStorage,
-} from "src/services/localStorage";
+export default async function signUp(values) {
+  const headers = { "Content-Type": "application/json" };
 
-export default function signUp(values) {
-  let users = getFromLocalStorage("users");
-  if (!Array.isArray(users)) {
-    users = [];
-  }
+  const body = JSON.stringify({
+    age: values.age,
+    email: values.email,
+    firstName: values.firstName,
+    lastName: values.lastName,
+    login: values.login,
+    password: values.password,
+  });
 
-  if (users.find((item) => item.login === values.login)) {
-    return "User already exist!";
-  } else {
-    const user = {
-      age: values.age,
-      email: values.email,
-      firstName: values.firstName,
-      lastName: values.lastName,
-      login: values.login,
-      password: values.password,
-    };
-    saveToLocalStorage("users", [...users, user]);
-  }
+  const { error } = await fetch("http://localhost:3000/sign-up", {
+    method: "POST",
+    headers,
+    body,
+  }).then((r) => r.json());
+
+  return error;
 }

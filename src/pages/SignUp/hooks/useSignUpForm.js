@@ -6,8 +6,8 @@ export default function useSignUpForm() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const onSubmit = (values) => {
-    const result = signUp(values);
+  const onSubmit = async (values) => {
+    const result = await signUp(values);
 
     if (result) {
       setError(result);

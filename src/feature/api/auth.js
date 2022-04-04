@@ -1,24 +1,16 @@
-import { getFromLocalStorage } from "src/services/localStorage";
+export default async function auth(values) {
+  const headers = { "Content-Type": "application/json" };
 
-export default function auth(values) {
-  const data = getFromLocalStorage("users");
+  const body = JSON.stringify({
+    login: values.login,
+    password: values.password,
+  });
 
-  const fullUser = data?.find((user) => user.login === values.login);
-
-  let error;
-  if (!fullUser) {
-    error = "User not found!";
-  } else if (values.password !== fullUser.password) {
-    error = "Invalid credentials!";
-  }
-
-  const user = {
-    age: fullUser.age,
-    email: fullUser.email,
-    firstName: fullUser.firstName,
-    lastName: fullUser.lastName,
-    login: fullUser.login,
-  };
+  const { user, error } = await fetch("http://localhost:3000/login", {
+    method: "POST",
+    headers,
+    body,
+  }).then((r) => r.json());
 
   return { user, error };
 }

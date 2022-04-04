@@ -7,8 +7,8 @@ export default function useLoginForm() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const onSubmit = (values) => {
-    const { user, error } = auth(values);
+  const onSubmit = async (values) => {
+    const { user, error } = await auth(values);
 
     if (error) {
       setError(error);

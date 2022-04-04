@@ -13,8 +13,8 @@ export default function EditProfile() {
   const user = getFromLocalStorage("currentUser");
   const navigate = useNavigate();
 
-  const onSubmit = (values) => {
-    updateUser(values);
+  const onSubmit = async (values) => {
+    await updateUser(values);
     saveToLocalStorage("currentUser", values);
     navigate("/profile");
   };
