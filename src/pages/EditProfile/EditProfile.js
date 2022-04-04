@@ -8,13 +8,18 @@ import {
 } from "src/services/localStorage";
 import { useNavigate } from "react-router-dom";
 import updateUser from "src/feature/api/updateUser";
+import useOpenClose from "src/hooks/useOpenClose";
+import { CircularProgress } from "@mui/material";
 
 export default function EditProfile() {
   const user = getFromLocalStorage("currentUser");
   const navigate = useNavigate();
+  const { loading, startLoading, endLoading } = useOpenClose();
 
   const onSubmit = async (values) => {
+    startLoading();
     await updateUser(values);
+    endLoading();
     saveToLocalStorage("currentUser", values);
     navigate("/profile");
   };
@@ -30,6 +35,7 @@ export default function EditProfile() {
         <Field title="Email" name="email" type="email" />
       </section>
       <Button classname={styles.button} title="Save change" />
+      {loading && <CircularProgress color="inherit" />}
     </Form>
   );
 }

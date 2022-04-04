@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 import Form from "src/feature/form/components/Form/Form";
 import validators from "src/pages/Login/validators";
 import useLoginForm from "src/pages/Login/hooks/useLoginForm";
+import { CircularProgress } from "@mui/material";
 
 export default function LoginForm() {
-  const { error, onSubmit } = useLoginForm();
+  const { error, onSubmit, loading } = useLoginForm();
 
   return (
     <Form
@@ -21,6 +22,7 @@ export default function LoginForm() {
       <Link className={styles.link} to="/sign-up">
         No account? Create a new one.
       </Link>
+      {loading && <CircularProgress color="inherit" />}
       <p className={styles.error}>{error}</p>
     </Form>
   );
