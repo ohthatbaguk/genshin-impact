@@ -6,7 +6,6 @@ export default async function updateUser(values) {
     email: values.email,
     firstName: values.firstName,
     lastName: values.lastName,
-    login: values.login,
     password: values.password,
   };
 

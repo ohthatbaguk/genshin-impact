@@ -11,13 +11,15 @@ export default function useLoginForm() {
 
   const onSubmit = async (values) => {
     startLoading();
-    const { user, error } = await auth(values);
+    const { user, error, token } = await auth(values);
     endLoading();
 
     if (error) {
       setError(error);
       return;
     }
+
+    user.token = token;
     saveToLocalStorage("currentUser", user);
     navigate("/");
   };

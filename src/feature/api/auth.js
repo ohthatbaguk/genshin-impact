@@ -6,7 +6,7 @@ export default async function auth(values) {
     password: values.password,
   };
 
-  const { user, error } = await doApiRequest("login", body);
+  const { user, error, token } = await doApiRequest("login", body);
 
-  return { user, error };
+  return { user, error, token };
 }
