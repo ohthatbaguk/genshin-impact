@@ -4,9 +4,10 @@ import { Button, Field } from "src/feature/form";
 import Form from "src/feature/form/components/Form/Form";
 import validators from "src/pages/SignUp/validators";
 import useSignUpForm from "src/pages/SignUp/hooks/useSignUpForm";
+import { CircularProgress } from "@mui/material";
 
 export default function SignUpForm() {
-  const { error, onSubmit } = useSignUpForm();
+  const { error, onSubmit, loading } = useSignUpForm();
   return (
     <Form className={styles.form} onSubmit={onSubmit} validators={validators}>
       <h1 className={styles.title}>Sign Up</h1>
@@ -19,6 +20,7 @@ export default function SignUpForm() {
       <Field title="Email" name="email" type="email" />
       <Button title="Submit" />
       <p className={styles.error}>{error ?? ""}</p>
+      {loading && <CircularProgress color="inherit" />}
     </Form>
   );
 }
